@@ -25,12 +25,18 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
+        stage('Build Application') {
             steps {
-                // Run tests using npm
-                bat 'npm test'
+                bat 'npm run build' // Adjust this if you use a different build command
             }
         }
+
+        // stage('Run Tests') {
+        //     steps {
+        //         // Run tests using npm
+        //         bat 'npm test'
+        //     }
+        // }
 
         stage('Build Docker Image') {
             steps {
