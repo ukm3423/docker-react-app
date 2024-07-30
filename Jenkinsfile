@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_CREDENTIALS_ID = 'dockerhub-credentials-id'
+        DOCKER_CREDENTIALS_ID = 'docker-hub-credentials-id'
         GITHUB_CREDENTIALS_ID = 'github-credentials-id'
-        DOCKER_IMAGE_NAME = 'umeshkumarchamp/docker-react-app'
+        DOCKER_IMAGE = 'umeshkumarchamp/dockerbootapp'
         NODE_VERSION = '20.x'
     }
 
