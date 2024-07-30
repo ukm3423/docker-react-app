@@ -4,14 +4,14 @@ pipeline {
     environment {
         DOCKER_CREDENTIALS_ID = 'dockerhub-credentials-id'
         GITHUB_CREDENTIALS_ID = 'github-credentials-id'
-        DOCKER_IMAGE_NAME = 'umeshkumarchamp/react-docker-app'
+        DOCKER_IMAGE_NAME = 'umeshkumarchamp/docker-react-app'
         NODE_VERSION = '20.x'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: "${GITHUB_CREDENTIALS_ID}", url: 'https://github.com/ukm3423/Learnify.git'
+                git branch: 'main', credentialsId: "${GITHUB_CREDENTIALS_ID}", url: 'https://github.com/ukm3423/docker-react-app.git'
             }
         }
 
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 // Use NodeJS installation
                 tool name: 'NodeJS', type: 'NodeJSInstallation'
-                script {
+                script {    
                     // Install npm dependencies
                     bat 'npm install'
                 }
